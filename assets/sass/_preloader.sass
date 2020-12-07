@@ -1,0 +1,26 @@
+$size: 50px
+
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+.preloader
+  animation: spin 1s infinite linear
+  border: 2px solid rgba(30, 30, 30, 0.5)
+  border-left: 4px solid #fff
+  border-radius: 50%
+  height: $size
+  width: $size
+  top: 50%
+  left: 50%
+  margin-left: -($size / 2)
+  &--relative
+    position: relative
+  &--fullpage
+    position: absolute
+
+.loading
+  opacity: 0.3
+  pointer-events: none

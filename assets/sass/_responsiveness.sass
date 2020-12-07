@@ -1,0 +1,20 @@
+$tablet: 769px
+$desktop: 960px
+$widescreen: 1152px
+
+
+=mobile
+  @media screen and (max-width: $tablet - 1px)
+    @content
+
+=tablet
+  @media screen and (min-width: $tablet)
+    @content
+
+=desktop
+  @media screen and (min-width: $desktop)
+    @content
+
+=widescreen
+  @media screen and (min-width: $widescreen)
+    @content

@@ -1,0 +1,59 @@
+@import "initial-variables"
+
+@mixin input-common
+  border: 2px solid #000
+  border-radius: $border-radius
+  font-size: 1.1rem
+
+@mixin label-common
+  font-weight: 500
+  font-size: 1.1rem
+
+.field
+  $self: &
+  display: flex
+  flex-direction: column
+  padding: 0.5rem 0
+  &__label
+    padding-bottom: 0.5rem
+    +label-common
+  &__input
+    padding: 0.5rem
+    font-size: 1.1rem
+    border-radius: $border-radius
+    background: #fff
+    +input-common
+
+  &--invalid &__label
+      color: $invalid-color !important
+  &--invalid &__input
+      border-color: $invalid-color !important
+
+.radio-buttons
+  &__header
+    padding-bottom: 0.5rem
+    +label-common
+  &__option
+    display: inline-block
+    margin-right: 0.5rem
+    margin-bottom: 0.5rem
+
+    input[type=radio]
+      display: none
+      &:checked + label
+        background: #000
+        color: #fff
+
+    label
+      display: inline-block
+      cursor: pointer
+      padding: 0.8rem 1.3rem
+      user-select: none
+      +input-common
+      &:hover
+        background: $image-bg
+
+  &--invalid &__header
+    color: $invalid-color
+  &--invalid &__option label
+    border-color: $invalid-color

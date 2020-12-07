@@ -1,0 +1,23 @@
+@import "responsiveness"
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap')
+
+$container-gap: 24px
+
+body
+  font-family: 'Roboto', sans-serif
+
+.container
+  padding: 0 $container-gap 0 $container-gap
+  margin: 0 auto
+  +mobile
+    padding: 0 1rem !important
+  +tablet
+    max-width: $tablet - ($container-gap *2)
+  +desktop
+    max-width: $desktop - ($container-gap *2)
+  +widescreen
+    max-width: $widescreen - ($container-gap *2)
+
+@import "buttons"
+@import "form"
+@import "preloader"
